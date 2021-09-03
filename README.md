@@ -1,53 +1,105 @@
-# hook_art
-```
+# hook art
+
+## 1. hook_art
+
+```text
 frida -U --no-pause -f package_name -l hook_art.js
 ```
 
-## show
+## 2. hook_RegisterNatives
+
+```text
+frida -U --no-pause -f package_name -l hook_RegisterNatives.js
 ```
-RegisterNatives] method_count: 0x2c
-[RegisterNatives] name: nativeSetCrashLogFilesUploaded sig: ()V fnPtr: 0xd494d568 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetForeground sig: (Z)V fnPtr: 0xd494d580 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetProcessType sig: (Z)V fnPtr: 0xd494d59c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeChangeState sig: (Ljava/lang/String;Ljava/lang/String;Z)Z fnPtr: 0xd494da74 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetCrashCustoms sig: (ZZIIIIZZZIZ)V fnPtr: 0xd494d5b8 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeUpdateSignals sig: (III)V fnPtr: 0xd494d678 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetZip sig: (ZLjava/lang/String;I)V fnPtr: 0xd494dc68 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetCrashLogFileNames sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494dcb4 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetFolderNames sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494dd30 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetProcessNames sig: (Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494ddd0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetVersionInfo sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494de28 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetLogStrategy sig: (ZZJ)V fnPtr: 0xd494d6a0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeGetNativeBuildseq sig: ()Ljava/lang/String; fnPtr: 0xd494d8ac module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeUpdateCrashLogNames sig: ()V fnPtr: 0xd494d6dc module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeAddHeaderInfo sig: (Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494deb8 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeAddDumpFile sig: (Ljava/lang/String;Ljava/lang/String;ZZZZZ)I fnPtr: 0xd494df0c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeAddCallbackInfo sig: (Ljava/lang/String;ZZJI)I fnPtr: 0xd494dfb0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeGetCallbackInfo sig: (Ljava/lang/String;JIZ)Ljava/lang/String; fnPtr: 0xd494e020 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeCreateCachedInfo sig: (Ljava/lang/String;I)Z fnPtr: 0xd494e0ac module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeAddCachedInfo sig: (Ljava/lang/String;Ljava/lang/String;)Z fnPtr: 0xd494e0f0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetPackageInfo sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494e14c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSetMobileInfo sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0xd494e1c8 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeInitNative sig: ()V fnPtr: 0xd494d4a0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeInstallBreakpad sig: (II)V fnPtr: 0xd494d4b4 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeUninstallBreakpad sig: ()V fnPtr: 0xd494d4d0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeBreakpadInited sig: (Ljava/lang/String;)V fnPtr: 0xd494d9e0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativePrepareUnexpInfos sig: (Z)V fnPtr: 0xd494d4e4 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeGenerateUnexpLog sig: (JI)I fnPtr: 0xd494d500 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeReserveFileHandle sig: (II)V fnPtr: 0xd494d7a4 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeRegisterCurrentThread sig: (Ljava/lang/String;)V fnPtr: 0xd494dbd0 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeOpenFile sig: (Ljava/lang/String;)I fnPtr: 0xd494dc04 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeCloseFile sig: (I)V fnPtr: 0xd494d530 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeLockFile sig: (IZ)Z fnPtr: 0xd494d548 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeDumpThreads sig: (Ljava/lang/String;J)Ljava/lang/String; fnPtr: 0xd494f0fc module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeUpdateUnexpInfo sig: (I)V fnPtr: 0xd494d744 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSyncStatus sig: (Ljava/lang/String;Ljava/lang/String;I)Z fnPtr: 0xd494ea2c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeSyncInfo sig: (Ljava/lang/String;Ljava/lang/String;JJ)Z fnPtr: 0xd494ec54 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeGetOrSetIsolatedHostFd sig: (II)I fnPtr: 0xd494d75c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeIsolateCreateConnection sig: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)J fnPtr: 0xd494ee40 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeIsolateWriteData sig: (JLjava/lang/String;)I fnPtr: 0xd494e46c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeIsolateCloseConnection sig: (J)V fnPtr: 0xd494d6f4 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeIsCrashing sig: ()Z fnPtr: 0xd494d51c module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeLog sig: (ILjava/lang/String;Ljava/lang/String;)I fnPtr: 0xd494e244 module_name: libcrashsdk.so module_base: 0xd4948000
-[RegisterNatives] name: nativeCrash sig: (II)V fnPtr: 0xd494e864 module_name: libcrashsdk.so module_base: 0xd4948000
+
+### 2.1 show RegisterNatives
+
+```text
+[RegisterNatives] method_count: 0x1
+[RegisterNatives] java_class: com.facebook.react.bridge.ProxyJavaScriptExecutor name: initHybrid sig: (Lcom/facebook/react/bridge/JavaJSExecutor;)Lcom/facebook/jni/HybridData; fnPtr: 0x9ca00b61 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x6fb61
+[RegisterNatives] method_count: 0xe
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: initHybrid sig: ()Lcom/facebook/jni/HybridData; fnPtr: 0x9c9e1c65 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x50c65
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: initializeBridge sig: (Lcom/facebook/react/bridge/ReactCallback;Lcom/facebook/react/bridge/JavaScriptExecutor;Lcom/facebook/react/bridge/queue/MessageQueueThread;Lcom/facebook/react/bridge/queue/MessageQueueThread;Ljava/util/Collection;Ljava/util/Collection;)V fnPtr: 0x9c9e2401 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x51401
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: jniExtendNativeModules sig: (Ljava/util/Collection;Ljava/util/Collection;)V fnPtr: 0x9c9e2f11 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x51f11
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: jniSetSourceURL sig: (Ljava/lang/String;)V fnPtr: 0x9c9e3171 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x52171
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: jniRegisterSegment sig: (ILjava/lang/String;)V fnPtr: 0x9c9e3445 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x52445
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: jniLoadScriptFromAssets sig: (Landroid/content/res/AssetManager;Ljava/lang/String;Z)V fnPtr: 0x9c9e3801 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x52801
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: jniLoadScriptFromFile sig: (Ljava/lang/String;Ljava/lang/String;Z)V fnPtr: 0x9c9e3b35 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x52b35
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: jniLoadScriptFromDeltaBundle sig: (Ljava/lang/String;Lcom/facebook/react/bridge/NativeDeltaClient;Z)V fnPtr: 0x9c9e3f61 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x52f61
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: jniCallJSFunction sig: (Ljava/lang/String;Ljava/lang/String;Lcom/facebook/react/bridge/NativeArray;)V fnPtr: 0x9c9e438d module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x5338d
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: jniCallJSCallback sig: (ILcom/facebook/react/bridge/NativeArray;)V fnPtr: 0x9c9e4c45 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x53c45
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: setGlobalVariable sig: (Ljava/lang/String;Ljava/lang/String;)V fnPtr: 0x9c9e4f01 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x53f01
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: getJavaScriptContext sig: ()J fnPtr: 0x9c9e509d module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x5409d
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: getJSCallInvokerHolder sig: ()Lcom/facebook/react/turbomodule/core/JSCallInvokerHolderImpl; fnPtr: 0x9c9e519d module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x5419d
+[RegisterNatives] java_class: com.facebook.react.bridge.CatalystInstanceImpl name: jniHandleMemoryPressure sig: (I)V fnPtr: 0x9c9e539d module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x5439d
+[RegisterNatives] method_count: 0x1
+[RegisterNatives] java_class: com.facebook.react.bridge.queue.NativeRunnable name: run sig: ()V fnPtr: 0x9c9e0935 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x4f935
+[RegisterNatives] method_count: 0x1
+[RegisterNatives] java_class: com.facebook.react.bridge.CxxModuleWrapperBase name: getName sig: ()Ljava/lang/String; fnPtr: 0x9ca00e49 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x6fe49
+[RegisterNatives] method_count: 0x1
+[RegisterNatives] java_class: com.facebook.react.bridge.CxxModuleWrapper name: makeDsoNative sig: (Ljava/lang/String;Ljava/lang/String;)Lcom/facebook/react/bridge/CxxModuleWrapper; fnPtr: 0x9ca010f9 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x700f9
+[RegisterNatives] method_count: 0x1
+[RegisterNatives] java_class: com.facebook.react.bridge.CxxCallbackImpl name: nativeInvoke sig: (Lcom/facebook/react/bridge/NativeArray;)V fnPtr: 0x9ca013bd module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x703bd
+[RegisterNatives] method_count: 0x1
+[RegisterNatives] java_class: com.facebook.react.bridge.NativeArray name: toString sig: ()Ljava/lang/String; fnPtr: 0x9c9fec1d module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x6dc1d
+[RegisterNatives] method_count: 0x3
+[RegisterNatives] java_class: com.facebook.react.bridge.NativeDeltaClient name: initHybrid sig: ()Lcom/facebook/jni/HybridData; fnPtr: 0x9c9ffcfd module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x6ecfd
+[RegisterNatives] java_class: com.facebook.react.bridge.NativeDeltaClient name: processDelta sig: (Ljava/nio/channels/ReadableByteChannel;)V fnPtr: 0x9c9ffeed module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x6eeed
+[RegisterNatives] java_class: com.facebook.react.bridge.NativeDeltaClient name: reset sig: ()V fnPtr: 0x9c9fffc5 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x6efc5
+[RegisterNatives] method_count: 0x2
+[RegisterNatives] java_class: com.facebook.react.bridge.ReadableNativeArray name: importArray sig: ()[Ljava/lang/Object; fnPtr: 0x9ca03641 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x72641
+[RegisterNatives] java_class: com.facebook.react.bridge.ReadableNativeArray name: importTypeArray sig: ()[Ljava/lang/Object; fnPtr: 0x9ca03b01 module_name: libreactnativejni.so module_base: 0x9c991000 offset: 0x72b01
+```
+
+## 3 hook_artmethod
+
+```text
+
+frida -U --no-pause -f package_name -l hook_artmethod.js -o hook_artmethod.log
+```
+
+### 3.1 show PrettyMethod
+
+```text
+     ____
+    / _  |   Frida 14.2.18 - A world-class dynamic instrumentation toolkit
+   | (_| |
+    > _  |   Commands:
+   /_/ |_|       help      -> Displays the help system
+   . . . .       object?   -> Display information about 'object'
+   . . . .       exit/quit -> Exit
+   . . . .
+   . . . .   More info at https://www.frida.re/docs/home/
+Spawning `package_name`...
+Spawned `package_name`. Resuming main thread!
+[Google Pixel XL::package_name]-> void java.lang.Thread.<init>(java.lang.ThreadGroup, java.lang.String, int, boolean)
+void java.lang.ThreadGroup.add(java.lang.Thread)
+void java.lang.Thread.<init>(java.lang.ThreadGroup, java.lang.String, int, boolean)
+void java.lang.ThreadGroup.add(java.lang.Thread)
+void android.app.ActivityThread.main(java.lang.String[])
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+boolean android.os.Binder.execTransact(int, long, long, int)
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+void java.lang.ref.FinalizerReference.add(java.lang.Object)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
+android.os.BinderProxy android.os.BinderProxy.getInstance(long, long)
 ```
